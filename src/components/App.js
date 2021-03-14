@@ -1,4 +1,5 @@
 import React from "react";
+import MovieList from "./MovieList";
 
 
 
@@ -33,7 +34,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <h1>my movies</h1>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+
+          </div>
+        </div>
+
+        <MovieList movies={this.state.movies} />
+      </div>
     )
   }
 }
