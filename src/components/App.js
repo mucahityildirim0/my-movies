@@ -13,12 +13,13 @@ class App extends React.Component {
     searchQuery: ""
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const baseURL = "http://localhost:3002/movies" // verilerimiz neredeyse orayı yani neyi fetch etmek istiyoruz. 
-    const response = fetch(baseURL)
+    const response = await fetch(baseURL)
     console.log(response)
-    const data = response.json(); // verileri bize json olarak versin diye bu şekilde yaptık. 
+    const data = await response.json(); // verileri bize json olarak versin diye bu şekilde yaptık. 
     console.log(data)
+    this.setState({ movies: data })
   }
 
   deleteMovie = (movie) => {
